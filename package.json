@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": false,
   "description": "feishu message action",
-  "main": "lib/main.js",
+  "main": "src/main.ts",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.{ts,yml,json,md}",
