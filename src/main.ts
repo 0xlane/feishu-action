@@ -17,11 +17,15 @@ async function postMessage(): Promise<string> {
   const content: string = core.getInput('content')
   const card: string = core.getInput('card')
   if (!content) {
+    core.info("test")
+    core.info(card)
     return await postCard({
       msg_type,
       card: yaml.load(card)
     })
   }
+  core.info("testx")
+  core.info(content)
   return await post({
     msg_type,
     content: yaml.load(content)
