@@ -5,6 +5,10 @@ import yaml from 'js-yaml'
 interface Message {
   msg_type: string
   content: any
+}
+
+interface CardMessage {
+  msg_type: string
   card: any
 }
 
@@ -13,7 +17,7 @@ async function postMessage(): Promise<string> {
   const content: string = core.getInput('content')
   const card: string = core.getInput('card')
   if (!content) {
-    return await post({
+    return await postCard({
       msg_type,
       card: yaml.load(card)
     })
@@ -24,8 +28,23 @@ async function postMessage(): Promise<string> {
   })
 }
 
+async function postCard(body: CardMessage): Promise<string> {
+  const url: string = core.getInput('url')
+  core.debug(body)
+  const rsp = await got.post(url, {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  })
+
+  core.debug(rsp.body)
+  return rsp.body
+}
+
 async function post(body: Message): Promise<string> {
   const url: string = core.getInput('url')
+  core.debug(body)
   const rsp = await got.post(url, {
     headers: {
       'Content-Type': 'application/json'
