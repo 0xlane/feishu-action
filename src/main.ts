@@ -16,7 +16,7 @@ async function postMessage(): Promise<string> {
   const msg_type: string = core.getInput('msg_type')
   const content: string = core.getInput('content')
   const card: string = core.getInput('card')
-  if (!content) {
+  if (!content || content == "") {
     core.debug("test")
     core.debug(card)
     return await postCard({
