@@ -19,19 +19,6 @@ async function postMessage(): Promise<string> {
   })
 }
 
-async function postCard(body: CardMessage): Promise<string> {
-  const url: string = core.getInput('url')
-  const rsp = await got.post(url, {
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  })
-
-  core.debug(rsp.body)
-  return rsp.body
-}
-
 async function post(body: Message): Promise<string> {
   const url: string = core.getInput('url')
   const rsp = await got.post(url, {
@@ -48,7 +35,7 @@ async function post(body: Message): Promise<string> {
 async function run(): Promise<void> {
   try {
     await postMessage()
-  } catch (error) {
+  } catch (error: any) {
     core.setFailed(error.message)
   }
 }

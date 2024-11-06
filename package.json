@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": false,
   "description": "feishu message action",
-  "main": "src/main.ts",
+  "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.{ts,yml,json,md}",
@@ -11,7 +11,8 @@
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
     "test": "jest",
-    "all": "yarn run build && yarn run format  && yarn run pack && yarn test"
+    "all": "yarn run build && yarn run format  && yarn run pack && yarn test",
+    "webpack": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -45,7 +46,10 @@
     "jest-circus": "24.9.0",
     "js-yaml": "^4.1.0",
     "prettier": "^2.4.1",
-    "typescript": "4.4.4",
-    "ts-jest": "24.3.0"
+    "ts-jest": "24.3.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^4.4.4",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
   }
 }
