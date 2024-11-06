@@ -30,7 +30,7 @@ async function postMessage(): Promise<string> {
 
 async function postCard(body: CardMessage): Promise<string> {
   const url: string = core.getInput('url')
-  core.debug(body)
+  core.info(body)
   const rsp = await got.post(url, {
     headers: {
       'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ async function postCard(body: CardMessage): Promise<string> {
 
 async function post(body: Message): Promise<string> {
   const url: string = core.getInput('url')
-  core.debug(body)
+  core.info(body)
   const rsp = await got.post(url, {
     headers: {
       'Content-Type': 'application/json'
