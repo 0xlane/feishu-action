@@ -17,15 +17,15 @@ async function postMessage(): Promise<string> {
   const content: string = core.getInput('content')
   const card: string = core.getInput('card')
   if (!content) {
-    core.info("test")
-    core.info(card)
+    core.debug("test")
+    core.debug(card)
     return await postCard({
       msg_type,
       card: yaml.load(card)
     })
   }
-  core.info("testx")
-  core.info(content)
+  core.debug("testx")
+  core.debug(content)
   return await post({
     msg_type,
     content: yaml.load(content)
@@ -34,7 +34,7 @@ async function postMessage(): Promise<string> {
 
 async function postCard(body: CardMessage): Promise<string> {
   const url: string = core.getInput('url')
-  core.info(body)
+  core.debug(body)
   const rsp = await got.post(url, {
     headers: {
       'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ async function postCard(body: CardMessage): Promise<string> {
 
 async function post(body: Message): Promise<string> {
   const url: string = core.getInput('url')
-  core.info(body)
+  core.debug(body)
   const rsp = await got.post(url, {
     headers: {
       'Content-Type': 'application/json'
