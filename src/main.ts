@@ -10,6 +10,13 @@ interface Message {
 async function postMessage(): Promise<string> {
   const msg_type: string = core.getInput('msg_type')
   const content: string = core.getInput('content')
+  const card: string = core.getInput('card')
+  if (!content) {
+    return await post({
+      msg_type,
+      card: yaml.load(card)
+    })
+  }
   return await post({
     msg_type,
     content: yaml.load(content)
