@@ -5,6 +5,7 @@ import yaml from 'js-yaml'
 interface Message {
   msg_type: string
   content: any
+  card: any
 }
 
 async function postMessage(): Promise<string> {
