@@ -2,9 +2,7 @@ name: 'build-test'
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
-    branches:
-      - master
-      - 'releases/*'
+    tags:
       - 'v*'
 
 jobs:
@@ -68,3 +66,18 @@ jobs:
           msg_type: image
           content: |
             image_key: img_ecffc3b9-8f14-400f-a014-05eca1a4310g
+      - uses: ./
+        with:
+          url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
+          msg_type: interactive
+          card: |
+            config:
+              wide_screen_mode: true
+            header:
+              template: blue
+              title:
+                content: 🍎 HomeLab Release
+                tag: plain_text
+            elements:
+              - tag: markdown
+                content: ${{ context.payload.head_commit.message }}
