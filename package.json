@@ -1,8 +1,8 @@
 {
-  "name": "wechat-work-action",
-  "version": "1.0.0",
+  "name": "feishu-action",
+  "version": "0.0.1",
   "private": false,
-  "description": "wechat work message action",
+  "description": "feishu message action",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/foxundermoon/feishu-action.git"
+    "url": "git+https://github.com/0xlane/feishu-action.git"
   },
   "keywords": [
     "feishu",
