@@ -11,7 +11,7 @@
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
     "test": "jest",
-    "all": "yarn run build && yarn run format  && yarn run pack && yarn test",
+    "all": "export NODE_OPTIONS=--openssl-legacy-provider && yarn run build && yarn run format  && yarn run pack && yarn test",
     "webpack": "webpack --config webpack.config.js"
   },
   "repository": {
