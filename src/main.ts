@@ -14,7 +14,7 @@ async function postMessage(): Promise<string> {
   const card: string = core.getInput('card')
   return await post({
     msg_type,
-    content: yaml.load(content)
+    content: yaml.load(content),
     card: yaml.load(card)
   })
 }
