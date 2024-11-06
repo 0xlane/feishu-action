@@ -10,7 +10,7 @@
 
 ```yml
 - name: text message
-  uses: 0xlane/feishu-action@v2
+  uses: 0xlane/feishu-action@v1
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: text
@@ -28,7 +28,7 @@
 
 ```yml
 - name: post message
-  uses: 0xlane/feishu-action@v2
+  uses: 0xlane/feishu-action@v1
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: post
@@ -59,7 +59,7 @@
 
 ```yml
 - name: share_chat message
-  uses: 0xlane/feishu-action@v2
+  uses: 0xlane/feishu-action@v1
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: share_chat
@@ -71,7 +71,7 @@
 
 ```yml
 - name: image message
-  uses: 0xlane/feishu-action@v2
+  uses: 0xlane/feishu-action@v1
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: image
@@ -83,7 +83,7 @@
 
 ```yml
 - name: card message
-  uses: 0xlane/feishu-action@v2
+  uses: 0xlane/feishu-action@v1
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: interactive
