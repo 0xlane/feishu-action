@@ -1,8 +1,6 @@
 # feishu-action
 
-<p align="center">
-  <a href="https://github.com/0xlane/feishu-action"><img alt="feishu-action status" src="https://github.com/0xlane/feishu-action/workflows/build-test/badge.svg"></a>
-</p>
+<a href="https://github.com/0xlane/feishu-action"><img alt="feishu-action status" src="https://github.com/0xlane/feishu-action/workflows/build-test/badge.svg"></a>
 
 > The code is adapted from [foxundermoon/feishu-action](https://github.com/foxundermoon/feishu-action), with added support for **card** message.
 
