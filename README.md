@@ -1,6 +1,8 @@
 <p align="center">
-  <a href="https://github.com/foxundermoon/wechat-work-action"><img alt="wechat-work-action status" src="https://github.com/foxundermoon/wechat-work-action/workflows/build-test/badge.svg"></a>
+  <a href="https://github.com/0xlane/feishu-action"><img alt="feishu-action status" src="https://github.com/0xlane/feishu-action/workflows/build-test/badge.svg"></a>
 </p>
+
+> The code is adapted from [foxundermoon/feishu-action](https://github.com/foxundermoon/feishu-action), with added support for **card** message.
 
 ## ✨ Example Usage
 
@@ -8,7 +10,7 @@
 
 ```yml
 - name: text message
-  uses: foxundermoon/feishu-action@v2
+  uses: 0xlane/feishu-action@v2
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: text
@@ -26,7 +28,7 @@
 
 ```yml
 - name: post message
-  uses: foxundermoon/feishu-action@v2
+  uses: 0xlane/feishu-action@v2
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: post
@@ -57,7 +59,7 @@
 
 ```yml
 - name: share_chat message
-  uses: foxundermoon/feishu-action@v2
+  uses: 0xlane/feishu-action@v2
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: share_chat
@@ -69,12 +71,34 @@
 
 ```yml
 - name: image message
-  uses: foxundermoon/feishu-action@v2
+  uses: 0xlane/feishu-action@v2
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
     msg_type: image
     content: |
       image_key: img_ecffc3b9-8f14-400f-a014-05eca1a4310g
+```
+
+- card
+
+```yml
+- name: image message
+  uses: 0xlane/feishu-action@v2
+  with:
+    url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
+    msg_type: interactive
+    card: |
+      config:
+        wide_screen_mode: true
+      header:
+        template: blue
+        title:
+          content: 🍎 HomeLab Release
+          tag: plain_text
+      elements:
+        - tag: markdown
+          content: ${{ context.payload.head_commit.message }}
+
 ```
 
 🔐 Set your secrets here: `https://github.com/USERNAME/REPO/settings/secrets`.
