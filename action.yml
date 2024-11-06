@@ -10,7 +10,10 @@ inputs:
     description: the msg type  https://www.feishu.cn/hc/zh-CN/articles/360024984973
     default: text
   content:
-    required: true
+    required: false
+    description: the msg content https://www.feishu.cn/hc/zh-CN/articles/360024984973
+  card:
+    required: false
     description: the msg content https://www.feishu.cn/hc/zh-CN/articles/360024984973
 
 runs:
