@@ -97,7 +97,7 @@
           tag: plain_text
       elements:
         - tag: markdown
-          content: ${{ context.payload.head_commit.message }}
+          content: ${{ github.event.head_commit.message }}
 
 ```
 
