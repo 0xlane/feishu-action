@@ -82,7 +82,7 @@
 - card
 
 ```yml
-- name: image message
+- name: card message
   uses: 0xlane/feishu-action@v2
   with:
     url: ${{ secrets.FEISHU_BOT_WEBHOOK_URL }}
